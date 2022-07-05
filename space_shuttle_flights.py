@@ -50,7 +50,7 @@ elif r.status_code == HTTPStatus.OK:
     
     df2 = pd.read_html(str(tables[1]))
     df2 = pd.DataFrame(df2[0])
-     
+
     ##Check the column names of the two DataFrames match before merging
     for i in range(len(df2.columns)):
         if df1.columns[i] != df2.columns[i]:
@@ -73,6 +73,18 @@ elif r.status_code == HTTPStatus.OK:
     print('#'*50)
     print('')
 
+    ##Plot the number of flights for each shuttle
+    plt.bar(shuttle_flights.keys(), shuttle_flights.values())
+    plt.title('Number of flights for each Space Shuttle')
+    plt.xlabel('Shuttle')
+    plt.ylabel('Number of flights')
+    plt.savefig('Number_of_Space_Shuttle_Flights')
+
+
+
+
+
     
 
+   
         
