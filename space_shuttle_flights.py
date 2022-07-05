@@ -76,14 +76,8 @@ elif r.status_code == HTTPStatus.OK:
     ##Plot the number of flights for each shuttle
     plt.bar(shuttle_flights.keys(), shuttle_flights.values())
     plt.title('Number of flights for each Space Shuttle')
-    plt.xlabel('Shuttle')
     plt.ylabel('Number of flights')
     plt.savefig('Number_of_Space_Shuttle_Flights')
-
-
-
-
-
     
 
    
