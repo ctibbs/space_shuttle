@@ -79,6 +79,19 @@ elif r.status_code == HTTPStatus.OK:
     plt.ylabel('Number of flights')
     plt.savefig('Number_of_Space_Shuttle_Flights')
     
+    ##Update date format of the launch dates of each shuttle flight
+    for i in df.index:
+        ##Extract the launch day, month, and year
+        launch_day = df['Launch date'][i].split()[0]
+        launch_month = df['Launch date'][i].split()[1]
+        launch_year = df['Launch date'][i].split()[2][0:4]
 
+        ##Convert the string launch date to a datetime object
+        launch_date_str = launch_day+' '+launch_month+' '+launch_year
+        launch_dates = launch_dates + \
+                       [datetime.datetime.strptime(launch_date_str, '%d %B %Y')]
+
+    #Add new launch dates as a new column to the dataframe
+    df.insert(loc=2, column='Datetime launch date', value=launch_dates)
    
         
