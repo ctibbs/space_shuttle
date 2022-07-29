@@ -93,5 +93,6 @@ elif r.status_code == HTTPStatus.OK:
 
     #Add new launch dates as a new column to the dataframe
     df.insert(loc=2, column='Datetime launch date', value=launch_dates)
+    
    
         
