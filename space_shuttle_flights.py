@@ -24,6 +24,7 @@ import py_local_settings
 
 ##Define parameters
 shuttle_flights = {}
+launch_dates = []
 
 ##Define the URL
 url = 'https://en.wikipedia.org/wiki/List_of_Space_Shuttle_missions'
