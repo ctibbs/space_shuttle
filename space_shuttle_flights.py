@@ -62,22 +62,14 @@ elif r.status_code == HTTPStatus.OK:
     ##Extract the names of the shuttles
     shuttles = df['Shuttle'].unique()
 
-    ##Calculate the number of flights for each shuttle
-    print('')
-    print('#'*50)
-    print('Number of flights for each Space Shuttle:')
-    for shuttle in shuttles:
-        shuttle_df = df[df['Shuttle'] == shuttle]
-        shuttle_flights[shuttle] = len(shuttle_df)
-        print(shuttle, ':', len(shuttle_df))       
-    print('#'*50)
-    print('')
-
-    ##Plot the number of flights for each shuttle
-    plt.bar(shuttle_flights.keys(), shuttle_flights.values())
+    ##Calculate and plot the number of flights for each shuttle (short method)
+    df['Shuttle'].value_counts()
+    df['Shuttle'].value_counts(normalize = True)
+    df['Shuttle'].value_counts().plot(kind='bar', colormap='coolwarm', rot=0)
     plt.title('Number of flights for each Space Shuttle')
     plt.ylabel('Number of flights')
     plt.savefig('Number_of_Space_Shuttle_Flights')
+    plt.clf()
     
     ##Update date format of the launch dates of each shuttle flight
     for i in df.index:
