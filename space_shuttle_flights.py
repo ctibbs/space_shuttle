@@ -63,7 +63,7 @@ elif r.status_code == HTTPStatus.OK:
     ##Extract the names of the shuttles
     shuttles = df['Shuttle'].unique()
 
-    ##Calculate and plot the number of flights for each shuttle (short method)
+    ##Calculate and plot the number of flights for each shuttle
     df['Shuttle'].value_counts()
     df['Shuttle'].value_counts(normalize = True)
     df['Shuttle'].value_counts().plot(kind='bar', colormap='coolwarm', rot=0)
