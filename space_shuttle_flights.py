@@ -64,8 +64,13 @@ elif r.status_code == HTTPStatus.OK:
     shuttles = df['Shuttle'].unique()
 
     ##Calculate and plot the number of flights for each shuttle
-    df['Shuttle'].value_counts()
-    df['Shuttle'].value_counts(normalize = True)
+    print('')
+    print('#'*50)
+    print('Number of flights for each Space Shuttle:')
+    print(df['Shuttle'].value_counts())
+    print('')
+    print(df['Shuttle'].value_counts(normalize = True))
+    print('#'*50)
     df['Shuttle'].value_counts().plot(kind='bar', colormap='coolwarm', rot=0)
     plt.title('Number of flights for each Space Shuttle')
     plt.ylabel('Number of flights')
