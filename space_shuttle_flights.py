@@ -92,5 +92,22 @@ elif r.status_code == HTTPStatus.OK:
     #Add new launch dates as a new column to the dataframe
     df.insert(loc=2, column='Datetime launch date', value=launch_dates)
     
+    ###############################################################################
+    ##Calculate and plot the landing sites for each Shuttle flight
+    df['Landing site'].value_counts()
+
+    ##Deal with the super script comment on the Landing site entries: "Did not land"
+    df.replace(to_replace='Did not land[b]', value='Did not land', inplace=True)
+    df.replace(to_replace='Did not land [b]', value='Did not land', inplace=True)
+    
+    df.groupby('Shuttle')['Landing site'].value_counts()
+    df.groupby('Shuttle')['Landing site'].value_counts().unstack().plot(kind='bar',\
+                                                                        stacked=True, colormap='coolwarm',\
+                                                                        rot=0)
+    plt.title('Landing sites for each Space Shuttle flight')
+    plt.xlabel('')
+    plt.ylabel('Number of Landings')
+    plt.savefig('Landing_Sites_for_Space_Shuttle_Flights')
+
    
         
