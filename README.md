@@ -8,4 +8,4 @@ Code to analysis the NASA Space Shuttle flights.
 
 [Landing_Sites_for_Space_Shuttle_Flights.png](https://github.com/ctibbs/space_shuttle/blob/main/Landing_Sites_for_Space_Shuttle_Flights.png) - Plot of the different landing sites for each Space Shuttle flight.
 
-All data for the Space Shuttle flights are ased on the data collated in Wikipedia: https://en.wikipedia.org/wiki/List_of_Space_Shuttle_missions
+All data for the Space Shuttle flights are based on the data collated in Wikipedia: https://en.wikipedia.org/wiki/List_of_Space_Shuttle_missions
