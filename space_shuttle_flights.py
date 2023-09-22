@@ -20,6 +20,7 @@ import sys
 from http import HTTPStatus
 from pathlib import Path
 from bs4 import BeautifulSoup
+from io import StringIO
 import py_local_settings
 
 ##Define parameters
@@ -46,10 +47,10 @@ elif r.status_code == HTTPStatus.OK:
     tables = bs_r.find_all('table', {'class':'wikitable sortable'})
 
     ##Convert the data tables to DataFrames
-    df1 = pd.read_html(str(tables[0]))
+    df1 = pd.read_html(StringIO(str(tables[0])))
     df1 = pd.DataFrame(df1[0])
     
-    df2 = pd.read_html(str(tables[1]))
+    df2 = pd.read_html(StringIO(str(tables[1])))
     df2 = pd.DataFrame(df2[0])
 
     ##Check the column names of the two DataFrames match before merging
