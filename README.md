@@ -1,6 +1,6 @@
 # space_shuttle
 
-Code to analysis the NASA Space Shuttle flights.
+Code to analysis the NASA Space Shuttle flights. 
 
 [space_shuttle_flights.py](https://github.com/ctibbs/space_shuttle/blob/main/space_shuttle_flights.py) - Python script to extract the NASA Space Shuttle data from Wikipedia and analyse and plot it.
 
